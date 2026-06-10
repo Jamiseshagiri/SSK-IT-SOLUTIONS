@@ -1,0 +1,390 @@
+    #about{
+        scroll-margin-top: 70px;
+    }
+    body{
+        padding-top: 70px;
+    }
+    h1 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+/* ================= NAVBAR ================= */
+.navbar{
+    background:#0d6efd;
+    top: 0;
+    left: 0;
+    color:white;
+    width: 100%;
+    height: 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 20px;
+    position:fixed;
+    z-index: 1000;
+}
+
+/* Logo Section */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+    background:white;
+}
+
+.logo h2{
+    font-size:22px;
+    color:white;
+}
+
+/* Desktop Menu */
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    margin-left:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#ffd700;
+}
+
+/* Hamburger Button */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    border:1px solid white;
+    padding:3px 10px;
+    border-radius:5px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:#0d6efd;
+        flex-direction:column;
+        display:none;
+        z-index:1000;
+    }
+
+    .nav-links li{
+        text-align:center;
+        margin:0;
+        padding:15px 0;
+        border-top:1px solid rgba(255,255,255,0.2);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .logo h2{
+        font-size:18px;
+    }
+
+    .logo img{
+        width:40px;
+        height:40px;
+    }
+}
+
+
+/* About Section */
+.about{
+    max-width:1200px;
+    margin:60px auto;
+    padding:0 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.about-content h2{
+    color:#1e3a8a;
+    margin-bottom:15px;
+    font-size:2rem;
+}
+
+.about-content p{
+    line-height:1.8;
+    margin-bottom:15px;
+    color:#555;
+}
+
+/* Features Section */
+.features{
+    background:#fff;
+    padding:60px 20px;
+}
+
+.features h2{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:40px;
+    font-size:2rem;
+}
+
+.feature-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+/* ===== Gallery Grid ===== */
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Desktop: 4 photos */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Tablet view */
+@media (max-width: 992px){
+    .gallery{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 📱 Mobile view – 2 photos */
+@media (max-width: 768px){
+    .gallery{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 📱 Small mobile – 1 photo */
+@media (max-width: 480px){
+    .gallery{
+        grid-template-columns: 1fr;
+    }
+}
+
+.card{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+
+
+.card i{
+    font-size:40px;
+    color:#1e3a8a;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#222;
+}
+
+.card p{
+    color:#666;
+    line-height:1.6;
+}
+
+/* Counter Section */
+.counter-section{
+    background:#1e3a8a;
+    color:#fff;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.counter-section h2{
+    margin-bottom:15px;
+    font-size:2rem;
+}
+
+.counter{
+    font-size:3rem;
+    font-weight:700;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .about{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .about-content h2,
+    .features h2,
+    .counter-section h2{
+        font-size:1.8rem;
+    }
+
+    .counter{
+        font-size:2.5rem;
+    }
+}
+/* Whadsp */
+.whatsapp-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover{
+    background: #1ebe5d;
+    transform: scale(1.05);
+}
+/* gallary */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+
+.contact-section{
+  background:#f4f6f8;
+  padding:40px 20px;
+  text-align:center;
+}
+
+.contact-section h2{
+  color:#003366;
+  margin-bottom:20px;
+}
+
+#whatsappForm{
+  max-width:400px;
+  margin:auto;
+  background:#ffffff;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+#whatsappForm input,
+#whatsappForm textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:15px;
+}
+
+#whatsappForm textarea{
+  height:100px;
+  resize:none;
+}
+
+#whatsappForm button{
+  width:100%;
+  padding:12px;
+  background:#25D366;
+  border:none;
+  color:#fff;
+  font-size:16px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+#whatsappForm button:hover{
+  background:#1ebc59;
+}
+p{
+  border-radius: 3px #000;
+  
+}
+.pt{
+   border-left: 5px solid #3498db;
+   padding-left: 15px;
+   box-shadow: 5px 5px 10px rgba(0,0,0,0.2),
+                -2px -2px 5px rgba(255,255,255,0.5);
+    background-color: #f9f9f9;
+    transition:transform 0,3s ease;
+
+}
+.pt:hover{
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.3);
+}
